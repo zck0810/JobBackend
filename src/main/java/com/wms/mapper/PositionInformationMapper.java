@@ -10,4 +10,5 @@ import java.util.List;
 public interface PositionInformationMapper extends BaseMapper<PositionInformation> {
 
 
+    List<PositionInformation> getPositionInformationAll();
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface PositionInformationService extends IService<PositionInformation> {
 
 
+    List<PositionInformation> getPositionInformationAll();
 }

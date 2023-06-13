@@ -5,8 +5,12 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.util.Date;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
 @ApiModel(value="User对象", description="")
 public class PositionInformation {
     @ApiModelProperty(value = "主键")
@@ -38,11 +42,11 @@ public class PositionInformation {
     private String education;
 
     @ApiModelProperty(value = "职位描述")
-    private String position_statement;
+    private String positionStatement;
 
     @ApiModelProperty(value = "福利")
     private String welfare;
 
     @ApiModelProperty(value = "插入时间")
-    private String insert_time;
+    private Date insertTime;
 }

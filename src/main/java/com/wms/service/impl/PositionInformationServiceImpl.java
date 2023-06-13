@@ -15,6 +15,11 @@ public class PositionInformationServiceImpl extends ServiceImpl<PositionInformat
     @Resource
     private PositionInformationMapper positionInformationMapper;
 
+    @Override
+    public List<PositionInformation> getPositionInformationAll() {
+        return  positionInformationMapper.getPositionInformationAll();
+    }
+
 
 
 }

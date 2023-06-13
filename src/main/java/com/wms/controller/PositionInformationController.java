@@ -18,9 +18,11 @@ public class PositionInformationController {
 
     @RequestMapping(value = "getPositionInformationAll", method = RequestMethod.GET)
     @ResponseBody
-    public String getPositionInformationAll() {
-        return "123456789";
+    public List<PositionInformation> getPositionInformationAll() {
+        return positionInformationService.getPositionInformationAll();
     }
+
+
 
 
 

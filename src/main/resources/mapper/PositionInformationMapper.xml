@@ -24,5 +24,9 @@
         experience, education, position_statement, welfare, insert_time
     </sql>
 
+    <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
+        select * from position_Information
+    </select>
+
 
 </mapper>
