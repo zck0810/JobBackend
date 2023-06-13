@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.PositionInformationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.entity.PositionInformation">
+        <id column="id" property="id" />
+        <result column="job" property="job" />
+        <result column="city" property="city" />
+        <result column="companyName" property="companyName" />
+        <result column="salary" property="salary" />
+        <result column="salaryMax" property="salaryMax" />
+        <result column="salaryMin" property="salaryMin" />
+        <result column="experience" property="experience" />
+        <result column="education" property="education" />
+        <result column="position_statement" property="position_statement" />
+        <result column="welfare" property="welfare" />
+        <result column="insert_time" property="insert_time" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, job, city, comapnyName, salary, salaryMax, salaryMin,
+        experience, education, position_statement, welfare, insert_time
+    </sql>
+
+
+</mapper>
