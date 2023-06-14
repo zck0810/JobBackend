@@ -15,8 +15,8 @@
         experience, avg_salary_min, avg_salary_max, avg_combined
     </sql>
 
-    <select id="getSalaryAll" resultType="com.wms.entity.PositionInformation">
-        select * from position_Information
+    <select id="getSalaryAll" resultType="com.wms.entity.ExperienceInformation">
+        select * from experience_information
     </select>
 
 </mapper>

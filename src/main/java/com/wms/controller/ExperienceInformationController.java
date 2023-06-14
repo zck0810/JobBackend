@@ -21,7 +21,7 @@ import java.util.List;
  * @since 2023-06-15
  */
 @RestController
-@RequestMapping("/positionInformation")
+@RequestMapping("/experienceInformation")
 public class ExperienceInformationController {
     @Autowired
     private ExperienceInformationService experienceInformationService;
