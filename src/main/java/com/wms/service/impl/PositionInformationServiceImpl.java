@@ -20,6 +20,10 @@ public class PositionInformationServiceImpl extends ServiceImpl<PositionInformat
         return  positionInformationMapper.getPositionInformationAll();
     }
 
+    @Override
+    public List<PositionInformation> getSalary() {
+        return  positionInformationMapper.getSalary();
+    }
 
 
 }
