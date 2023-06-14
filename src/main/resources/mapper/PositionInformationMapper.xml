@@ -31,6 +31,12 @@
     <select id="getSalary" resultType="map">
         SELECT salary_max ,salary_min FROM position_Information
     </select>
-
+    <select id="getCityAndCityCount" resultType="map">
+        SELECT city, COUNT(city) AS count
+        FROM position_Information
+        GROUP BY city
+        ORDER BY count DESC, city ASC
+        LIMIT 15
+    </select>
 
 </mapper>

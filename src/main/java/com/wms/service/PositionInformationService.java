@@ -10,4 +10,5 @@ public interface PositionInformationService extends IService<PositionInformation
 
     List<PositionInformation> getPositionInformationAll();
     List<PositionInformation> getSalary();
+    List<PositionInformation> getCityAndCityCount();
 }
