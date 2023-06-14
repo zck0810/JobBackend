@@ -11,7 +11,7 @@ import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="User对象", description="")
+@ApiModel(value="PositionInformation对象", description="")
 public class PositionInformation {
     @ApiModelProperty(value = "主键")
     @TableId(value = "id", type = IdType.AUTO)

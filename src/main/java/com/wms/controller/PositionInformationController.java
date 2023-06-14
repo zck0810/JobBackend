@@ -1,6 +1,5 @@
 package com.wms.controller;
 
-import com.wms.common.Result;
 import com.wms.entity.PositionInformation;
 import com.wms.service.PositionInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,9 @@ public class PositionInformationController {
     public List<PositionInformation> getPositionInformationAll() {
         return positionInformationService.getPositionInformationAll();
     }
+
+
+
 
 
 
