@@ -21,6 +21,16 @@ public class PositionInformationController {
         return positionInformationService.getPositionInformationAll();
     }
 
+    @RequestMapping(value = "getSalary", method = RequestMethod.GET)
+    @ResponseBody
+    public List<PositionInformation> getSalary() {
+        return positionInformationService.getSalary();
+    }
+    @RequestMapping(value = "getCityAndCityCount", method = RequestMethod.GET)
+    @ResponseBody
+    public List<PositionInformation> getCityAndCityCount() {
+        return positionInformationService.getCityAndCityCount();
+    }
 
 
 

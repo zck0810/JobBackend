@@ -11,6 +11,6 @@ public interface PositionInformationMapper extends BaseMapper<PositionInformatio
 
 
     List<PositionInformation> getPositionInformationAll();
-
-    List<PositionInformation> getTechnicalFrequencyStatistics();
+    List<PositionInformation> getSalary();
+    List<PositionInformation> getCityAndCityCount();
 }

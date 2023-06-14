@@ -19,15 +19,25 @@
     </resultMap>
 
     <!-- 通用查询结果列 -->
-    <sql id="Base_Column_List">
-        id, job, city, comapnyName, salary, salaryMax, salaryMin,
-        experience, education, position_statement, welfare, insert_time
-    </sql>
+<!--    <sql id="Base_Column_List">-->
+<!--        id, job, city, comapnyName, salary, salaryMax, salaryMin,-->
+<!--        experience, education, position_statement, welfare, insert_time-->
+<!--    </sql>-->
 
     <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
         select * from position_Information
     </select>
 
+    <select id="getSalary" resultType="map">
+        SELECT salary_max ,salary_min FROM position_Information
+    </select>
+    <select id="getCityAndCityCount" resultType="map">
+        SELECT city, COUNT(city) AS count
+        FROM position_Information
+        GROUP BY city
+        ORDER BY count DESC, city ASC
+        LIMIT 15
+    </select>
 
 
 
