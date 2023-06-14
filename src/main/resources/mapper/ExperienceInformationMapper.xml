@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.ExperienceInformationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.entity.ExperienceInformation">
+        <result column="experience" property="experience" />
+        <result column="avg_salary_min" property="avgSalaryMin" />
+        <result column="avg_salary_max" property="avgSalaryMax" />
+        <result column="avg_combined" property="avgCombined" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        experience, avg_salary_min, avg_salary_max, avg_combined
+    </sql>
+
+    <select id="getSalaryAll" resultType="com.wms.entity.PositionInformation">
+        select * from position_Information
+    </select>
+
+</mapper>
