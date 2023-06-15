@@ -9,8 +9,10 @@ import java.util.List;
 @Mapper
 public interface PositionInformationMapper extends BaseMapper<PositionInformation> {
 
-
     List<PositionInformation> getPositionInformationAll();
+
+    List<PositionInformation> getCityFromHottestPosition();
+
     List<PositionInformation> getSalary();
     List<PositionInformation> getCityAndCityCount();
 }

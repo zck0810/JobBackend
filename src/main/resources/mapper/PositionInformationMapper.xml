@@ -19,10 +19,10 @@
     </resultMap>
 
     <!-- 通用查询结果列 -->
-<!--    <sql id="Base_Column_List">-->
-<!--        id, job, city, comapnyName, salary, salaryMax, salaryMin,-->
-<!--        experience, education, position_statement, welfare, insert_time-->
-<!--    </sql>-->
+    <sql id="Base_Column_List">
+        id, job, city, comapnyName, salary, salaryMax, salaryMin,
+        experience, education, position_statement, welfare, insert_time
+    </sql>
 
     <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
         select * from position_Information
@@ -38,6 +38,16 @@
         ORDER BY count DESC, city ASC
         LIMIT 15
     </select>
+
+
+    <select id="getCityFromHottestPosition" resultType="map">
+        SELECT job, COUNT(*) AS count
+        FROM position_Information
+        GROUP BY job
+        ORDER BY count DESC
+        LIMIT 20;
+    </select>
+
 
 
 
