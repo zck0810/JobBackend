@@ -7,5 +7,7 @@ import lombok.Data;
 public class Mappronum {
     private int id;
     private String province;
+    private double avgsalarymin;
+    private double avgsalarymax;
     private int num;
 }
