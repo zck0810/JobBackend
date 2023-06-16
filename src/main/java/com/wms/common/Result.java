@@ -3,7 +3,7 @@ package com.wms.common;
 import lombok.Data;
 
 @Data
-public class Result {
+public class Result<P> {
 
     private int code;//编码 200/400
     private String msg;//成功/失败
@@ -22,11 +22,11 @@ public class Result {
         return result(200,"成功",0L,data);
     }
 
-    public static Result suc(Object data,Long total){
+    public static Result suc(Object data, Long total){
         return result(200,"成功",total,data);
     }
 
-    private static Result result(int code,String msg,Long total,Object data){
+    private static Result result(int code, String msg, Long total, Object data){
         Result res = new Result();
         res.setData(data);
         res.setMsg(msg);

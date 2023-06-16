@@ -25,7 +25,7 @@
     </sql>
 
     <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
-        select * from position_Information
+        SELECT * FROM position_Information
     </select>
 
     <select id="getSalary" resultType="map">

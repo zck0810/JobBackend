@@ -1,10 +1,13 @@
 package com.wms.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.wms.entity.PositionInformation;
 import com.wms.mapper.PositionInformationMapper;
 import com.wms.service.PositionInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
@@ -16,10 +19,10 @@ public class PositionInformationServiceImpl extends ServiceImpl<PositionInformat
     @Resource
     private PositionInformationMapper positionInformationMapper;
 
-    @Override
-    public List<PositionInformation> getPositionInformationAll() {
-        return  positionInformationMapper.getPositionInformationAll();
-    }
+//    @Override
+//    public List<PositionInformation> getPositionInformationAll() {
+//        return  positionInformationMapper.getPositionInformationAll();
+//    }
 
     @Override
     public List<PositionInformation> getSalary() {
@@ -35,14 +38,15 @@ public class PositionInformationServiceImpl extends ServiceImpl<PositionInformat
         return positionInformationMapper.getCityFromHottestPosition();
     }
 
-//    @Autowired
-//    public List<PositionInformation> getHottestJob(){
-//        return positionInformationMapper.getHottestJob();
+
+//    @Override
+//    public Page<PositionInformation> getPositionInformationAll(Pageable pageable) {
+//        return positionInformationMapper.getPositionInformationAll(pageable);
 //    }
-//
-//    public List<PositionInformation>getCityByHottestJob(String hottestJob){
-//        return positionInformationMapper.getCityByHottestJob(hottestJob);
-//    }
+
+    public IPage<PositionInformation> getPositionInformationAll(Page<PositionInformation> page, PositionInformation positionInformation) {
+        return positionInformationMapper.getPositionInformationAll(page,positionInformation);
+    }
 
 
 
