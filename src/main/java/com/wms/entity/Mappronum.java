@@ -9,5 +9,6 @@ public class Mappronum {
     private String province;
     private double avgsalarymin;
     private double avgsalarymax;
+    private double avgsalary;
     private int num;
 }
