@@ -44,12 +44,23 @@
         LIMIT 20;
     </select>
 
-    <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
+    <select id="getPositionInformationAll" resultType="map">
         SELECT * FROM position_Information
     </select>
 
     <select id="fullTextSearch" resultType="map">
-        SELECT * FROM position_Information WHERE (job like '%"inputValue+"%');
+        SELECT * FROM position_Information
+        WHERE
+            job LIKE CONCAT('%', #{inputValue}, '%') OR
+            city LIKE CONCAT('%', #{inputValue}, '%') OR
+            company_name LIKE CONCAT('%', #{inputValue}, '%') OR
+            salary LIKE CONCAT('%', #{inputValue}, '%') OR
+            salary_max LIKE CONCAT('%', #{inputValue}, '%') OR
+            salary_min LIKE CONCAT('%', #{inputValue}, '%') OR
+            experience LIKE CONCAT('%', #{inputValue}, '%') OR
+            education LIKE CONCAT('%', #{inputValue}, '%') OR
+            welfare LIKE CONCAT('%', #{inputValue}, '%')
+
     </select>
 
 

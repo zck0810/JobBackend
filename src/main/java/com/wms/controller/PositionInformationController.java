@@ -42,13 +42,12 @@ public class PositionInformationController {
         return  positionInformationService.getPositionInformationAll(pageNo,positionInformation);
     }
 
-    @RequestMapping(value = "fullTextSearch", method = RequestMethod.POST)
+    @RequestMapping(value = "fullTextSearch", method = RequestMethod.GET)
     @ResponseBody
     public IPage<PositionInformation> fullTextSearch(@RequestParam String inputValue ,@RequestParam(defaultValue = "0") int page,
                                                                 @RequestParam(defaultValue = "10") int size,
                                                                 PositionInformation positionInformation) {
         Page<PositionInformation> pageNo = new Page<>(page,size);
-        System.out.println(inputValue);
         return  positionInformationService.fullTextSearch(inputValue,pageNo,positionInformation);
     }
 

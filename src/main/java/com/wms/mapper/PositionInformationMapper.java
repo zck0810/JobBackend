@@ -22,7 +22,7 @@ public interface PositionInformationMapper extends BaseMapper<PositionInformatio
 
 //    Page<PositionInformation> getPositionInformationAll(Pageable pageable);
 
-    IPage<PositionInformation> getPositionInformationAll(Page<PositionInformation> page, @Param("projectBiddVO") PositionInformation positionInformation);
+    IPage<PositionInformation> getPositionInformationAll(Page<PositionInformation> page, @Param("PositionInformation") PositionInformation positionInformation);
 
     IPage<PositionInformation> fullTextSearch(String inputValue, Page<PositionInformation> page, PositionInformation positionInformation);
 }
