@@ -15,19 +15,6 @@ public class PositionInformationController {
     @Autowired
     private PositionInformationService positionInformationService;
 
-
-
-
-    @RequestMapping(value = "getPositionInformationAll", method = RequestMethod.GET)
-    @ResponseBody
-    public IPage<PositionInformation> getPositionInformationAll(@RequestParam(defaultValue = "0") int page,
-                                                                @RequestParam(defaultValue = "10") int size,
-                                                                 PositionInformation positionInformation) {
-        Page<PositionInformation> pageNo = new Page<>(page,size);
-        return  positionInformationService.getPositionInformationAll(pageNo,positionInformation);
-
-    }
-
     @RequestMapping(value = "getSalary", method = RequestMethod.GET)
     @ResponseBody
     public List<PositionInformation> getSalary() {
@@ -43,12 +30,27 @@ public class PositionInformationController {
     @ResponseBody
     public List<PositionInformation> getCityFromHottestPosition(){
         List list = positionInformationService.getCityFromHottestPosition();
-        System.out.println("list"+list);
         return list;
     }
 
+    @RequestMapping(value = "getPositionInformationAll", method = RequestMethod.GET)
+    @ResponseBody
+    public IPage<PositionInformation> getPositionInformationAll(@RequestParam(defaultValue = "0") int page,
+                                                                @RequestParam(defaultValue = "10") int size,
+                                                                PositionInformation positionInformation) {
+        Page<PositionInformation> pageNo = new Page<>(page,size);
+        return  positionInformationService.getPositionInformationAll(pageNo,positionInformation);
+    }
 
-
+    @RequestMapping(value = "fullTextSearch", method = RequestMethod.POST)
+    @ResponseBody
+    public IPage<PositionInformation> fullTextSearch(@RequestParam String inputValue ,@RequestParam(defaultValue = "0") int page,
+                                                                @RequestParam(defaultValue = "10") int size,
+                                                                PositionInformation positionInformation) {
+        Page<PositionInformation> pageNo = new Page<>(page,size);
+        System.out.println(inputValue);
+        return  positionInformationService.fullTextSearch(inputValue,pageNo,positionInformation);
+    }
 
 
 }

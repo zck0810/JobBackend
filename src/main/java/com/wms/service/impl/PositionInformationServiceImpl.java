@@ -19,11 +19,6 @@ public class PositionInformationServiceImpl extends ServiceImpl<PositionInformat
     @Resource
     private PositionInformationMapper positionInformationMapper;
 
-//    @Override
-//    public List<PositionInformation> getPositionInformationAll() {
-//        return  positionInformationMapper.getPositionInformationAll();
-//    }
-
     @Override
     public List<PositionInformation> getSalary() {
         return  positionInformationMapper.getSalary();
@@ -39,13 +34,11 @@ public class PositionInformationServiceImpl extends ServiceImpl<PositionInformat
     }
 
 
-//    @Override
-//    public Page<PositionInformation> getPositionInformationAll(Pageable pageable) {
-//        return positionInformationMapper.getPositionInformationAll(pageable);
-//    }
-
     public IPage<PositionInformation> getPositionInformationAll(Page<PositionInformation> page, PositionInformation positionInformation) {
         return positionInformationMapper.getPositionInformationAll(page,positionInformation);
+    }
+    public IPage<PositionInformation> fullTextSearch(String inputValue ,Page<PositionInformation> page, PositionInformation positionInformation) {
+        return positionInformationMapper.fullTextSearch(inputValue,page,positionInformation);
     }
 
 

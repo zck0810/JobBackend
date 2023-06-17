@@ -24,10 +24,6 @@
         experience, education, position_statement, welfare, insert_time
     </sql>
 
-    <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
-        SELECT * FROM position_Information
-    </select>
-
     <select id="getSalary" resultType="map">
         SELECT salary_max ,salary_min FROM position_Information
     </select>
@@ -46,6 +42,14 @@
         GROUP BY job
         ORDER BY count DESC
         LIMIT 20;
+    </select>
+
+    <select id="getPositionInformationAll" resultType="com.wms.entity.PositionInformation">
+        SELECT * FROM position_Information
+    </select>
+
+    <select id="fullTextSearch" resultType="map">
+        SELECT * FROM position_Information WHERE (job like '%"inputValue+"%');
     </select>
 
 

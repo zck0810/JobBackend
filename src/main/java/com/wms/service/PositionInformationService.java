@@ -19,6 +19,6 @@ public interface PositionInformationService extends IService<PositionInformation
     List<PositionInformation> getSalary();
     List<PositionInformation> getCityAndCityCount();
 
-//    Page<PositionInformation> getPositionInformationAll(Pageable pageable);
     IPage<PositionInformation> getPositionInformationAll(Page<PositionInformation> page, PositionInformation positionInformation);
+    IPage<PositionInformation> fullTextSearch(String inputValue, Page<PositionInformation> page, PositionInformation positionInformation);
 }
